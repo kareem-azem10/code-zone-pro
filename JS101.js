@@ -1,4 +1,6 @@
 /*
+nots:
+
 number=double like 1.5 and int (intajer) 
 var x=10.5;
 x = parseint(x);//10
@@ -13,32 +15,18 @@ if(....){
 example for if
 }
 }//else
+
+addtional nots:
++= addition assignment
+>= Greater Than or Equal to
 */
 
+const batata = (x) => {
+    x = 20
+}
+const z = 30
 
-const clock = {
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    melesecound: 0,
-  };
-  
-  const tick = (clock) => {
-    clock.melesecound = clock.melesecound + 1;
-    clock.seconds = clock.seconds + clock.melesecound;
-    clock.minutes = clock.secound + clock.melesecound /60;
-    clock.hours =  clock.minutes + clock.melesecoundc/60;
-    clock.seconds = clock.hours + clock.melesecound %60;
-    clock.minutes = clock.minutes + clock.melesecound %60;
-    clock.hours = clock.melesecound %24;
+// console.log(batata(z));
+console.log(batata(z));
 
-    return tick;
-    
-  };
-
-//   console.log(tick);
-
-
-  const show = () => {
-    
-  }
+batata(z)
