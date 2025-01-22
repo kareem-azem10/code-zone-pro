@@ -76,7 +76,6 @@ const speedUP = () => {
     console.log(car.speed++);
     
 }
-
 speedUP()
 show()
 setMidDay()
