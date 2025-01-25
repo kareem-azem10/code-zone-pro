@@ -89,20 +89,61 @@ const angels = {
 
 console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}`);
 
-    const coordints = {
+    const coordinates = {
         xu: angels.xu,
         yu: angels.yu,
         xl: angels.xl,
         yl: angels.yl,
     }
-    if (coordints.xu === angels.xu && coordints.yu === angels.yu && coordints.xl === angels.xl && coordints.yl === angels.yl) {
+    if (coordinates.xu === angels.xu && coordinates.yu === angels.yu && coordinates.xl === angels.xl && coordinates.yl === angels.yl) {
         console.log(true);
     } else {
         console.log(false);
     }
 
-    const 
-    
+    const isPointInRectangle = (x, y, rectangle) => {
+        return (x >= rectangle.xu && x <= rectangle.xl) && 
+               (y >= rectangle.yu && y <= rectangle.yl);
+    }
+
+    const Point1 = { x: 15, y: 15 };
+    const Point2 = { x: 5, y: 5 };   
+
+    console.log(`Point (${Point1.x}, ${Point1.y}) is inside rectangle: ${isPointInRectangle(Point1.x, Point1.y, coordinates)}`);
+    console.log(`Point (${Point2.x}, ${Point2.y}) is inside rectangle: ${isPointInRectangle(Point2.x, Point2.y, coordinates)}`);
+
+        const PythagoreanTheorem =()=>{
+            const a = 3;
+            const b = 4;
+            const c = Math.sqrt(a * a + b * b);
+            console.log(`The Pythagorean theorem applies to the triangle with sides ${a}, ${b}, and ${c}.`);
+        }
+
+        PythagoreanTheorem();
+
+        const isSquare = (rect) => {
+            // Calculate width and height using coordinates
+            const width = Math.abs(rect.xl - rect.xu);
+            const height = Math.abs(rect.yl - rect.yu);
+            return width === height;
+        }
+
+        // Test if our rectangle is square
+        console.log(`Is the rectangle a square? ${isSquare(coordinates)}`);
+
+        const ChickIfGoldTringle = () => {
+            const a = 5;
+            const b = 8;
+            const c = Math.sqrt(a * a + b * b);
+            const goldTringle = (c / b);
+            if (Math.abs(goldTringle - 1.618) < 0.01) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(ChickIfGoldTringle());
+
 //call functions
 // add(10,5)
 // multiply(5,6)
