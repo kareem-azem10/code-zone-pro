@@ -57,15 +57,15 @@ const capitalizeFirsLetter = (text) => {
 }
 //rectangle
 
-const mainCoordinates={
+const Coordinates={
     xu: 5,
     yu: 10,
     xl: 15,
     yl: 5,
 }
 
-const Length = mainCoordinates.xl - mainCoordinates.xu;
-const width = mainCoordinates.yl - mainCoordinates.yu;
+const Length = Coordinates.xl - Coordinates.xu;
+const width = Coordinates.yl - Coordinates.yu;
 
 const calcrectanglearea = (Length, width) => {
     return Length * width;
@@ -88,22 +88,22 @@ let result = calcRectangle(Length, width);
 
 console.log(`Area and Perimeter of rectangle: ${result}`); 
 
-const angels = {
+const mainCoordinates = {
     xu: 10,
     yu: 10,
     xl: 20,
     yl: 20,
 } 
 
-console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}`);
+console.log(`the angels are: ${mainCoordinates.xu} ${mainCoordinates.yu} ${mainCoordinates.xl} ${mainCoordinates.yl}`);
 
     const coordinates = {
-        xu: angels.xu,
-        yu: angels.yu,
-        xl: angels.xl,
-        yl: angels.yl,
+        xu: mainCoordinates.xu,
+        yu: mainCoordinates.yu,
+        xl: mainCoordinates.xl,
+        yl: mainCoordinates.yl,
     }
-    if (coordinates.xu === angels.xu && coordinates.yu === angels.yu && coordinates.xl === angels.xl && coordinates.yl === angels.yl) {
+    if (coordinates.xu === mainCoordinates.xu && coordinates.yu === mainCoordinates.yu && coordinates.xl === mainCoordinates.xl && coordinates.yl === mainCoordinates.yl) {
         console.log(true);
     } else {
         console.log(false);
@@ -123,7 +123,7 @@ console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}
         const RectangleChord =()=>{
             const a = Length;
             const b = width;
-            const c = Math.sqrt(a * a + b * b);
+            const c = Math.abs(a - b);
             console.log(`The chord of the rectangle is: ${c}`);
         }
 
@@ -139,10 +139,13 @@ console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}
         // Test if our rectangle is square
         console.log(`Is the rectangle a square? ${isSquare(coordinates)}`);
 
-        const isRectangleGold = () => {
-            const a = Length;
-            const b = width;
-            const c = Math.sqrt(a * a + b * b);
+        const LENGHT = Length;
+        const Width = width;
+        
+        const goldRectangle = () => {
+            const a = LENGHT;
+            const b = Width;
+            const c = Math.abs(a * a + b * b);
             const goldRectangle = (c / b);
             if (Math.abs(goldRectangle - 1.618) < 0.01) {
                 return true;
@@ -150,7 +153,7 @@ console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}
                 return false;
             }
         }
-        console.log(isRectangleGold());
+        console.log(goldRectangle());
 
 //call functions
 // add(10,5)
