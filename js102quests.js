@@ -55,28 +55,36 @@ const capitalizeFirsLetter = (text) => {
     const first = convertToUpper(text.charAt(0))
     return first + text.slice(1)
 }
+//rectangle
 
-const length = 10;
-const width = 5;
-
-const calcrectanglearea = (length, width) => {
-    return length * width;
+const mainCoordinates={
+    xu: 5,
+    yu: 10,
+    xl: 15,
+    yl: 5,
 }
 
-const area = calcrectanglearea(length, width);
+const Length = mainCoordinates.xl - mainCoordinates.xu;
+const width = mainCoordinates.yl - mainCoordinates.yu;
+
+const calcrectanglearea = (Length, width) => {
+    return Length * width;
+}
+
+const area = calcrectanglearea(Length, width);
 console.log(`Area of the rectangle: ${area}`);
 
-const calcrectanglePerimeter = (length, width) => {
-    return 2 * (length + width);
+const calcrectanglePerimeter = (Length, width) => {
+    return 2 * (Length + width);
 }
-const perimeter = calcrectanglePerimeter(length, width);
+const perimeter = calcrectanglePerimeter(Length, width);
 console.log(`Perimeter of the rectangle: ${perimeter}`);
 
-const calcRectangle =(length, width) => {
-    return length * width + ", " + 2 * (length + width);
+const calcRectangle =(Length, width) => {
+    return Length * width + ", " + 2 * (Length + width);
 }
 
-let result = calcRectangle(length, width);
+let result = calcRectangle(Length, width);
 
 console.log(`Area and Perimeter of rectangle: ${result}`); 
 
@@ -112,14 +120,14 @@ console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}
     console.log(`Point (${Point1.x}, ${Point1.y}) is inside rectangle: ${isPointInRectangle(Point1.x, Point1.y, coordinates)}`);
     console.log(`Point (${Point2.x}, ${Point2.y}) is inside rectangle: ${isPointInRectangle(Point2.x, Point2.y, coordinates)}`);
 
-        const PythagoreanTheorem =()=>{
-            const a = 3;
-            const b = 4;
+        const RectangleChord =()=>{
+            const a = Length;
+            const b = width;
             const c = Math.sqrt(a * a + b * b);
-            console.log(`The Pythagorean theorem applies to the triangle with sides ${a}, ${b}, and ${c}.`);
+            console.log(`The chord of the rectangle is: ${c}`);
         }
 
-        PythagoreanTheorem();
+        RectangleChord();
 
         const isSquare = (rect) => {
             // Calculate width and height using coordinates
@@ -131,18 +139,18 @@ console.log(`the angels are: ${angels.xu} ${angels.yu} ${angels.xl} ${angels.yl}
         // Test if our rectangle is square
         console.log(`Is the rectangle a square? ${isSquare(coordinates)}`);
 
-        const ChickIfGoldTringle = () => {
-            const a = 5;
-            const b = 8;
+        const isRectangleGold = () => {
+            const a = Length;
+            const b = width;
             const c = Math.sqrt(a * a + b * b);
-            const goldTringle = (c / b);
-            if (Math.abs(goldTringle - 1.618) < 0.01) {
+            const goldRectangle = (c / b);
+            if (Math.abs(goldRectangle - 1.618) < 0.01) {
                 return true;
             } else {
                 return false;
             }
         }
-        console.log(ChickIfGoldTringle());
+        console.log(isRectangleGold());
 
 //call functions
 // add(10,5)
