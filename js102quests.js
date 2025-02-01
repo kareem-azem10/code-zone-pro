@@ -120,14 +120,14 @@ console.log(`the angels are: ${mainCoordinates.xu} ${mainCoordinates.yu} ${mainC
     console.log(`Point (${Point1.x}, ${Point1.y}) is inside rectangle: ${isPointInRectangle(Point1.x, Point1.y, coordinates)}`);
     console.log(`Point (${Point2.x}, ${Point2.y}) is inside rectangle: ${isPointInRectangle(Point2.x, Point2.y, coordinates)}`);
 
-        const RectangleChord =()=>{
+        const RectangleChord =(Length, width)=>{
             const a = Length;
             const b = width;
-            const c = Math.abs(a - b);
+            const c = Math.sqrt(a * a + b * b);
             console.log(`The chord of the rectangle is: ${c}`);
         }
 
-        RectangleChord();
+        RectangleChord(Length, width);
 
         const isSquare = (rect) => {
             // Calculate width and height using coordinates
@@ -138,16 +138,11 @@ console.log(`the angels are: ${mainCoordinates.xu} ${mainCoordinates.yu} ${mainC
 
         // Test if our rectangle is square
         console.log(`Is the rectangle a square? ${isSquare(coordinates)}`);
-
-        const LENGHT = Length;
-        const Width = width;
         
         const goldRectangle = () => {
-            const a = LENGHT;
-            const b = Width;
-            const c = Math.abs(a * a + b * b);
-            const goldRectangle = (c / b);
-            if (Math.abs(goldRectangle - 1.618) < 0.01) {
+            const width = Math.abs(coordinates.xl - coordinates.xu);
+            const height = Math.abs(coordinates.yl - coordinates.yu);
+            if (Math.abs(width / height - 1.618) < 0.0001) {
                 return true;
             } else {
                 return false;
