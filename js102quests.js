@@ -183,6 +183,11 @@ const pointEquation = (point, axis) => {
 }
 console.log(`The equation of the line is: y = ${slope(axis)}x + ${yIntercept(axis)}`);
 
+const pointOnLine = (point, axis) => {
+    return pointEquation(point, axis) === slope(axis);
+}
+console.log(`The point (${point.x}, ${point.y}) is on the line: ${pointOnLine(point, axis)}`);
+
 //call functions
 // add(10,5)
 // multiply(5,6)
