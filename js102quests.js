@@ -173,30 +173,16 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const newAxis = {
-    x1: 4,
-    y1: 2,
-    x2: 10,
-    y2: 7,
-}
-const checkIntercept = (axis, newAxis) => {
-    const m1 = slope(axis);
-    const m2 = slope(newAxis);
-    const b1 = yIntercept(axis);
-    const b2 = yIntercept(newAxis);
-    if (m1 === m2) {
-        return false;
-    } else {
-        const x = (b2 - b1) / (m1 - m2);
-        const y = m1 * x + b1;
-        if (x >= Math.min(axis.x1, axis.x2) && x <= Math.max(axis.x1, axis.x2) && x >= Math.min(axis.y1, axis.y2) && x <= Math.max(axis.y1, axis.y2)) {
-            return true;
-        } else {
-            return false;
-        }
+const newAxis = (axis,x,y) => {
+    return {
+        ...axis,
+        x1: x,
+        y1: y,
+        x2: x + (axis.x2 - axis.x1),
+        y2: y + (axis.y2 - axis.y1),
     }
-}
-console.log(`Does the new axis intersect with the old axis? ${checkIntersect(axis, newAxis)}`);
+};
+console.log(newAxis(axis,10,10))
 
 
 
