@@ -173,16 +173,12 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const point = {
-    x: 10,
-    y: 12,
+const isTheNewPointOnTheLine = (axis,x,y) => {
+    yIntercept(axis);
+    slope(axis);
+    return y === slope * x + yIntercept;
 }
-const checkPointOnAxis = (axis, point) => {
-    return (point.y - axis.y1) / (point.x - axis.x1) === slope(axis);
-}
-console.log(`The point (${point.x},${point.y}) is on the line: ${checkPointOnAxis(axis, point)}`);
-
-
+console.log(`The point is on the line: ${isTheNewPointOnTheLine(axis)}`);
 
 
 //call functions
