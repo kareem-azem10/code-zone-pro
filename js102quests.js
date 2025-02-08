@@ -173,13 +173,10 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const isTheNewPointOnTheLine = (axis,x,y) => {
-    yIntercept(axis);
-    slope(axis);
-    return y === slope * x + yIntercept;
+const distance = (axis) => {
+    return Math.sqrt((axis.x2 - axis.x1) * (axis.x2 - axis.x1) + (axis.y2 - axis.y1) * (axis.y2 - axis.y1));
 }
-console.log(`The point is on the line: ${isTheNewPointOnTheLine(axis)}`);
-
+console.log(`The distance between the two points is: ${distance(axis)}`);
 
 //call functions
 // add(10,5)
