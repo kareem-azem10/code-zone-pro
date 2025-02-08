@@ -177,20 +177,13 @@ const isAxisOnLine = (axis) => {
     return slope(axis) === 0 && yIntercept(axis) === 0;
 }
 console.log(`The line is on the axis: ${isAxisOnLine(axis)}`);
-
-const equationOfLine = (axis) => {
-    const m = slope(axis);
-    const b = yIntercept(axis);
-    return `y=${m}x+${b}`;
+const newAxis = {
+    x1: 30,
+    y1: 40,
+    x2: 40,
+    y2: 50
 }
-console.log(`The equation of the line is: ${equationOfLine(axis)}`);
-    const newAxis = {
-        x1: 30,
-        y1: 40,
-        x2: 40,
-        y2: 50
-    }
-    console.log(`The new axis is on the line: ${isAxisOnLine(newAxis)}`);
+console.log(`The new axis is on the line: ${isAxisOnLine(newAxis)}`);
 
 
 
