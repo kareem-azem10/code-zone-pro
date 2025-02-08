@@ -173,17 +173,31 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const isAxisOnLine = (axis) => {
-    return slope(axis) === 0 && yIntercept(axis) === 0;
-}
-console.log(`The line is on the axis: ${isAxisOnLine(axis)}`);
+//quest4
 const newAxis = {
-    x1: 30,
-    y1: 40,
-    x2: 40,
-    y2: 50
+    x1: 4,
+    y1: 2,
+    x2: 10,
+    y2: 7,
 }
-console.log(`The new axis is on the line: ${isAxisOnLine(newAxis)}`);
+const checkIntersect = (axis, newAxis) => {
+    const m1 = slope(axis);
+    const m2 = slope(newAxis);
+    const b1 = yIntercept(axis);
+    const b2 = yIntercept(newAxis);
+    if (m1 === m2) {
+        return false;
+    } else {
+        const x = (b2 - b1) / (m1 - m2);
+        const y = m1 * x + b1;
+        if (x >= Math.min(axis.x1, axis.x2) && x <= Math.max(axis.x1, axis.x2) && x >= Math.min(axis.y1, axis.y2) && x <= Math.max(axis.y1, axis.y2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+console.log(`Does the new axis intersect with the old axis? ${checkIntersect(axis, newAxis)}`);
 
 
 
