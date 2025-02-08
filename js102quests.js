@@ -173,14 +173,13 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-//quest4
 const newAxis = {
     x1: 4,
     y1: 2,
     x2: 10,
     y2: 7,
 }
-const checkIntersect = (axis, newAxis) => {
+const checkIntercept = (axis, newAxis) => {
     const m1 = slope(axis);
     const m2 = slope(newAxis);
     const b1 = yIntercept(axis);
