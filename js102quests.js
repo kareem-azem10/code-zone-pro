@@ -173,16 +173,15 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const newAxis = (axis,x,y) => {
-    return {
-        ...axis,
-        x1: x,
-        y1: y,
-        x2: x + (axis.x2 - axis.x1),
-        y2: y + (axis.y2 - axis.y1),
-    }
-};
-console.log(newAxis(axis,10,10))
+const point = {
+    x: 10,
+    y: 12,
+}
+const checkPointOnAxis = (axis, point) => {
+    return (point.y - axis.y1) / (point.x - axis.x1) === slope(axis);
+}
+console.log(`The point (${point.x},${point.y}) is on the line: ${checkPointOnAxis(axis, point)}`);
+
 
 
 
