@@ -173,10 +173,15 @@ const yIntercept = (axis) => {
 console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
 //quest3
-const distance = (axis) => {
-    return Math.sqrt((axis.x2 - axis.x1) * (axis.x2 - axis.x1) + (axis.y2 - axis.y1) * (axis.y2 - axis.y1));
+const point = {
+    x: 5,
+    y: 10,
 }
-console.log(`The distance between the two points is: ${distance(axis)}`);
+
+const pointEquation = (point, axis) => {
+    return (point.y - axis.y1) / (point.x - axis.x1);
+}
+console.log(`The equation of the line is: y = ${slope(axis)}x + ${yIntercept(axis)}`);
 
 //call functions
 // add(10,5)
