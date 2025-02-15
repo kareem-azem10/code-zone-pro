@@ -3,6 +3,8 @@
 //     return a + b
 // }
 
+const { log } = require("console");
+
 // const multiply = (x, y) => {
 
 //     console.log(x * y);
@@ -153,50 +155,92 @@
 // console.log(goldRectangle());
 
 //axis x,y
-const axis = {
-    x1: 5,
-    y1: 10,
-    x2: 15,
-    y2: 20,
+// const axis = {
+//     x1: 5,
+//     y1: 10,
+//     x2: 15,
+//     y2: 20,
 
-}
-//quest1
-const slope = (axis) => {
-    return (axis.y2 - axis.y1) / (axis.x2 - axis.x1);
-}
-console.log(`The slope of the line is: ${slope(axis)}`);
+// }
+// //quest1
+// const slope = (axis) => {
+//     return (axis.y2 - axis.y1) / (axis.x2 - axis.x1);
+// }
+// console.log(`The slope of the line is: ${slope(axis)}`);
 
-//quest2
-const yIntercept = (axis) => {
-    return axis.y1 - slope(axis) * axis.x1;
-}
-console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
+// //quest2
+// const yIntercept = (axis) => {
+//     return axis.y1 - slope(axis) * axis.x1;
+// }
+// console.log(`The y-intercept of the line is: ${yIntercept(axis)}`);
 
-//quest3
-const point = {
-    x: 5,
-    y: 10,
+// //quest3
+// const point = {
+//     x: 5,
+//     y: 10,
+// }
+
+// const pointEquation = (point, axis) => {
+//     return (point.y - axis.y1) / (point.x - axis.x1);
+// }
+// console.log(`The equation of the line is: y = ${slope(axis)}x + ${yIntercept(axis)}`);
+
+// const pointOnLine = (point, axis) => {
+//     return pointEquation(point, axis) === slope(axis);
+// }
+// console.log(`The point (${point.x}, ${point.y}) is on the line: ${pointOnLine(point, axis)}`);
+
+// cars
+const car = {
+    speed: 0,
+    maxSpeed: null,
+    carid: "",
 }
 
-const pointEquation = (point, axis) => {
-    return (point.y - axis.y1) / (point.x - axis.x1);
-}
-console.log(`The equation of the line is: y = ${slope(axis)}x + ${yIntercept(axis)}`);
 
-const pointOnLine = (point, axis) => {
-    return pointEquation(point, axis) === slope(axis);
+const carinfo = (car, max, id) => {
+    car.carid = id,
+        car.maxSpeed = max;
+    car.speed = 0;
+    return car;
 }
-console.log(`The point (${point.x}, ${point.y}) is on the line: ${pointOnLine(point, axis)}`);
 
-//call functions
-// add(10,5)
-// multiply(5,6)
-// calculate(5, 10, 5, 6)
-// checkEven(1345)
-// divide(10,5)
-// safeDivide(5,5)
-//  console.log(factorial(5));
-//  console.log(findmax([1,2,3,4,5,6,7,8,9,10]))
-//  convertToUpper("hello")
-//  capitalizeFirsLetter("hello")
-// angel(10,10,20,20)
+
+const speedUP = (car, value) => {
+    if (value < -car.speed) {
+        return;
+    }
+    car.speed += value;
+    if (car.speed >= car.maxSpeed) {
+        car.speed = car.maxSpeed;
+        console.log("car is at maxspeed");
+    } else {
+        console.log("car speed is:", car.speed);
+    }
+    return car;
+}
+
+const getSpeed = (car) => {
+    return car.speed;
+}
+
+const speedDown = (car, slow) => {
+    if (slow < -car.speed) {
+        return;
+    }
+    if (car.speed < 0) {
+        car.speed = Math.max(0, car.speed - slow); // This ensures speed never goes below 0
+        console.log("current speed:", car.speed);
+    } else {
+        console.log("car is stopped");
+    }
+    return car;
+}
+
+carinfo(car, 15, "car1")
+speedUP(car, 2)
+speedUP(car, -4)
+speedDown(car, -12)
+// console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
+// console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
+console.log(car);
