@@ -3,3 +3,37 @@ MATH
 math.abs(number) //returns the absolute value of a number
 math.pow(number) //returns the value of a number raised to the power of another number
 math.sqrt(number) //returns the square root of a number
+
+number=double like 1.5 and int (intajer) 
+var x=10.5;
+x = parseint(x);//10
+(datalose)
+
+
+if/else
+if(5>6){
+console.log("batata")
+else
+if(....){
+example for if
+}
+}//else
+
+addtional nots:
++= addition assignment
+>= Greater Than or Equal to
+=======
+
+
+        LOOPS
+dynamic
+for -> الى
+for(let i=0;i<10;i++){
+log("hello",i);
+}
+
+while
+while(i<10){
+    log("hello",i);
+    i++;
+}

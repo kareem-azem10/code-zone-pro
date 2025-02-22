@@ -191,56 +191,87 @@ const { log } = require("console");
 // console.log(`The point (${point.x}, ${point.y}) is on the line: ${pointOnLine(point, axis)}`);
 
 // cars
-const car = {
-    speed: 0,
-    maxSpeed: null,
-    carid: "",
-}
+// const car = {
+//     speed: 0,
+//     maxSpeed: null,
+//     carid: "",
+// }
 
 
-const carinfo = (car, max, id) => {
-    car.carid = id,
-        car.maxSpeed = max;
-    car.speed = 0;
-    return car;
-}
+// const carinfo = (car, max, id) => {
+//     car.carid = id,
+//         car.maxSpeed = max;
+//     car.speed = 0;
+//     return car;
+// }
 
 
-const speedUP = (car, value) => {
-    if (value < -car.speed) {
-        return;
+// const speedUP = (car, value) => {
+//     if (value < -car.speed) {
+//         return;
+//     }
+//     car.speed += value;
+//     if (car.speed >= car.maxSpeed) {
+//         car.speed = car.maxSpeed;
+//         console.log("car is at maxspeed");
+//     } else {
+//         console.log("car speed is:", car.speed);
+//     }
+//     return car;
+// }
+
+// const getSpeed = (car) => {
+//     return car.speed;
+// }
+
+// const speedDown = (car, slow) => {
+//     if (slow < -car.speed) {
+//         return;
+//     }
+//     if (car.speed < 0) {
+//         car.speed = Math.max(0, car.speed - slow); // This ensures speed never goes below 0
+//         console.log("current speed:", car.speed);
+//     } else {
+//         console.log("car is stopped");
+//     }
+//     return car;
+// }
+
+{/*  
+
+
+    */}
+
+    const reactangel ={
+        height:4,
+        width:6
     }
-    car.speed += value;
-    if (car.speed >= car.maxSpeed) {
-        car.speed = car.maxSpeed;
-        console.log("car is at maxspeed");
-    } else {
-        console.log("car speed is:", car.speed);
-    }
-    return car;
-}
 
-const getSpeed = (car) => {
-    return car.speed;
-}
-
-const speedDown = (car, slow) => {
-    if (slow < -car.speed) {
-        return;
+    const drawFilled = (reactangel) => {
+        for (let i = 0; i < reactangel.height; i++) {
+            console.log("*".repeat(reactangel.width));
+        }
     }
-    if (car.speed < 0) {
-        car.speed = Math.max(0, car.speed - slow); // This ensures speed never goes below 0
-        console.log("current speed:", car.speed);
-    } else {
-        console.log("car is stopped");
-    }
-    return car;
-}
+    drawFilled(reactangel)
 
-carinfo(car, 15, "car1")
-speedUP(car, 2)
-speedUP(car, -4)
-speedDown(car, -12)
+    const overLoad = (reactangel, symbol) => {
+    for(let i=0; i<reactangel.height;i++){
+        console.log(symbol.repeat(reactangel.width));
+    }
+    }
+    overLoad(reactangel, "#")
+
+// carinfo(car, 15, "car1")
+// speedUP(car, 2)
+// speedUP(car, -4)
+// speedDown(car, -12)
 // console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
 // console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
-console.log(car);
+// console.log(car);
+// carinfo(car, 15, "car1")
+// speedUP(car, 2)
+// speedUP(car, -4)
+// speedDown(car, -12)
+// console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
+// console.log({ ...car, speed: car.speed === car.maxSpeed ? "maxspeed" : car.speed });
+// console.log(car);
