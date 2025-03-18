@@ -242,24 +242,70 @@ const { log } = require("console");
 
     */}
 
-    const reactangel ={
-        height:4,
-        width:6
-    }
+const reactangel = {
+    height: 8,
+    width: 5
+}
 
-    const drawFilled = (reactangel) => {
-        for (let i = 0; i < reactangel.height; i++) {
-            console.log("*".repeat(reactangel.width));
+const drowRow = (symbol, reactangel) => {
+    let row = "";
+    for (let i = 0; i < reactangel.width; i++) {
+        row += symbol;
+    }
+    console.log(row);
+}
+// drowRow("-", reactangel)
+console.log(" ");
+
+const drowEmptyRow = (symbol, reactangel) => {
+    let row = "";
+    for (let i = 0; i < reactangel.width; i++) {
+        if (i == 0 || i == reactangel.width - 1) {
+            row += symbol;
+        } else {
+            row += " ";
         }
     }
-    drawFilled(reactangel)
+    console.log(row);
+}
 
-    const overLoad = (reactangel, symbol) => {
-    for(let i=0; i<reactangel.height;i++){
+// drowEmptyRow("-", reactangel)
+
+const drowEmpty = (symbol, reactangel) => {
+    drowRow(symbol, reactangel);
+    for (let index = 0; index < reactangel.height - 2; index++) {
+        drowEmptyRow(symbol, reactangel);        
+    }
+    drowRow(symbol, reactangel);
+}
+
+drowEmpty("-", reactangel)
+console.log(" ");
+
+
+const drawFilled = (reactangel) => {
+    for (let i = 0; i < reactangel.height; i++) {
+        console.log("*".repeat(reactangel.width));
+    }
+}
+drawFilled(reactangel)
+
+console.log(" ");
+
+const a = () => {
+
+}
+
+
+
+const overLoad = (reactangel, symbol) => {
+    for (let i = 0; i < reactangel.height; i++) {
         console.log(symbol.repeat(reactangel.width));
     }
-    }
-    overLoad(reactangel, "#")
+}
+overLoad(reactangel, "#")
+
+console.log(" ");
 
 // carinfo(car, 15, "car1")
 // speedUP(car, 2)
