@@ -285,7 +285,7 @@ console.log(" ");
 
 const drawFilled = (reactangel) => {
     for (let i = 0; i < reactangel.height; i++) {
-        console.log("*".repeat(reactangel.width));
+        console.log("drawfilled","*".repeat(reactangel.width));
     }
 }
 drawFilled(reactangel)
